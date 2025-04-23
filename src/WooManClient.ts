@@ -42,4 +42,9 @@ export class WooManClient {
     const response = await this.client.get("/orders", { params });
     return response.data as Order[];
   }
+
+  public async getOrder(orderId: string) {
+    const response = await this.client.get(`/orders/${orderId}`);
+    return response.data as Order;
+  }
 }
